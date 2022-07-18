@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>scriptsize__c</fullName>
+    <description>This tracks the script size because this can be helpful to understand at which parts of the codebase creates largest increases in script size and helpful not only to track defects but also to identify where code can be made more efficient</description>
+    <externalId>false</externalId>
+    <label>scriptsize</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

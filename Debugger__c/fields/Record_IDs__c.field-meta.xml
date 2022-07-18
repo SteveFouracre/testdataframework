@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_IDs__c</fullName>
+    <description>The comma separated list of record IDs that is associated with the defect / monitoring message
+ie: A defect will typically only have 1 ID, but a monitoring message could have multiple</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The comma separated list of record IDs that is associated with the defect / monitoring message</inlineHelpText>
+    <label>Record IDs</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

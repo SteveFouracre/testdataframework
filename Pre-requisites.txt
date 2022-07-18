@@ -1,0 +1,11 @@
+1. Create a Custom Meta Data Type called Test_Data__mdt. Create 2 fields Category__c Text(100) Field Manageability - Upgradable; Json__c Long Text Area(32768) Field Manageability - Upgradable
+
+2. Create 2 custom objects Debugger__c and DebugParent__c
+If you do not wish to record error messages in these 2 objects then change the code in the framework where these 
+objects are referenced to the objects you wish to record error messages in
+
+3. Create 2 custom settings Trigger_Per_Object__c, Triggers_Off__c
+If you do not wish to bypass triggers using these 2 objects then change the code in the framework where these 
+custom settings are referenced 
+
+
