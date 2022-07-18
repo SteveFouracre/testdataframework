@@ -164,6 +164,21 @@ public static Map<System.Type, Map<String, list<ErrorMessage>>> saveMonitoringMe
                         }
                     }
                 }
+                else{
+                        // create list of Debug Messages NOT linking to Debug Parent records
+                        Debugger__c[] totalDbgMessages = new Debugger__c[]{};
+                        for (Integer thisParent : newDbgMessages.keySet()) {
+                                // check we have sufficient governor limits (number of DML records) for the Debug Message
+                                if (totalDbgMessages.size() + Limits.getDmlRows() < Limits.getLimitDmlRows()) {
+                                    totalDbgMessages.addall(newDbgMessages.get(thisParent));
+                                }
+                        }
+                        
+                        // save debug message records
+                        if (!totalDbgMessages.isEmpty()) {
+                            insert totalDbgMessages;
+                        }
+                }
             }
 
             return true;
