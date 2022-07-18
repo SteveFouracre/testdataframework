@@ -8,4 +8,13 @@ objects are referenced to the objects you wish to record error messages in
 If you do not wish to bypass triggers using these 2 objects then change the code in the framework where these 
 custom settings are referenced 
 
+4. Create 2 custom settings MonitoringCoverage (Hierarchy type) and Monitoring (List type) 
+MonitoringCoverage custom setting fields
+value - Checkbox
 
+Monitoring custom setting fields
+Active - Checkbox
+Monitor Datetime From - Datetime 
+Monitor Datetime To - Datetime 
+
+Note: If you are not enabling List type custom settings in your org you will need to change the framework slightly
