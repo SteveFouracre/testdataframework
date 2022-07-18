@@ -138,7 +138,7 @@ public static Map<System.Type, Map<String, list<ErrorMessage>>> saveMonitoringMe
             if (Limits.getDmlStatements() <= (Limits.getLimitDmlStatements() -2)) {
 
                 // save debug parent records
-                if (!newDbgParents.isEmpty()) {
+                if (newDbgParents != null && !newDbgParents.isEmpty()) {
 
                     // check we have sufficient governor limits (number of DML records) for the Debug Parent records
                     if (newDbgParents.size() + Limits.getDmlRows() < Limits.getLimitDmlRows()) {
