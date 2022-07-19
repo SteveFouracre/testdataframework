@@ -5,7 +5,7 @@ global abstract with sharing class TestDataCoreInsert extends TestDataReturn{
     public String debugMessageType = 'Test Data Framework';
     global Boolean allowBatch = false;
     public Integer batchSize = 200;
-    global String deactivateTrigger = DML_Master.TRIGGER_ALL;
+    global String deactivateTrigger = TriggerController.TRIGGER_ALL;
     global String postProcessorClass;
     
     global sObject insertAnyObject(String thisjson, Map<String, Object> fldVals, GenericDMLResult[] dbErrors, System.Type thisObjType){        
