@@ -180,6 +180,26 @@ public static Map<System.Type, Map<String, list<ErrorMessage>>> saveMonitoringMe
                         }
                 }
             }
+            else if (!System.isBatch() && !System.isFuture() && !mimicProcessByBatch) {
+                //if dml limits would breach inserting messages instead process by batch if wasn't called from a batch or future
+                Debugger__c[] totalDbgMessages = new Debugger__c[]{};
+                for (Debugger__c[] er1 : newDbgMessages.values()){
+                    totalDbgMessages.addall(er1);
+                }
+                Database.executebatch(new batchProcessDMLConsolidation(DML_Master.dmlType.INSERT_OBJECT, totalDbgMessages, true, true, 'Record Errors', DML_Master.TRIGGER_NONE, null), 200);
+            }
+            else{
+                //messages cannot be saved because limits and process originated from a batch or future
+
+                /*this ensures the debug statements are outputted even if not recorded into the custom object
+                note: for customers we would have to use the Customer ISV debugger to be able to see the debug statements 
+                https://developer.salesforce.com/tools/vscode/en/apex/isv-debugger*/
+                for (Debugger__c[] er1 : newDbgMessages.values()){
+                    for (Debugger__c er2 : er1){
+                        system.debug(er2);
+                    }
+                }
+            }
 
             return true;
 
