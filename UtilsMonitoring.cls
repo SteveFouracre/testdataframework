@@ -1,6 +1,9 @@
 tpublic with sharing class UtilsMonitoring {
 
 public static Set< String > monitorSet;
+@TestVisible private static Boolean mimicLimitsReached = false; //this is only set in  unit test
+@TestVisible private static Boolean mimicProcessByBatch = false; //this is only set in  unit test
+
 public static Map<System.Type, Map<String, list<ErrorMessage>>> saveMonitoringMessagesMap;
 
     public class ErrorMessage{
